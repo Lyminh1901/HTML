@@ -6,7 +6,7 @@
     <title>这是我</title>
 </head>
 <body>
-    <form action="" method="" >
+    <form id="login" >
         <!-- <label for="name">First name</label>
         <input type="text" name="name" id="name">
         <br>
@@ -14,19 +14,31 @@
         <input type="text" name="name" id="name"> -->
         <br>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" id="email" required>
         <br>
         <label for="password" >Password</label>
-        <input type="password" placeholder="password" name="password" id="password">
+        <input type="password" placeholder="password"  id="password" required>
         <br>
-        <input type="submit" value="please submit">
+        <button type="button" onclick="user()">Login</button>
     </form>
+
+    <div id="result"></div>
+    <br>
+    <script>
+        function user(){
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if(email === 'limlyminh059@gmail.com' && password === 'lyminh'){
+                document.getElementById('result').innerHTML = 'Login';
+                window.location.href = 'about.html'
+            }else{
+                document.getElementById('result').innerHTML = 'flase'
+            }
+        }
+    </script>
     
-    <a href="about.html">Test</a>
-    <br>
-    <a href="test1.html">Test1</a>
-    <br>
-    <a href="我.html">我</a>
+
     
 </body>
 </html>
